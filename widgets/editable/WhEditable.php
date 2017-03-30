@@ -27,6 +27,11 @@ class WhEditable extends CWidget
     public $type = null;
 
     /**
+     * @var boolean use bootstrap 3 version of x-editable
+     */
+    public $bootstrap3 = false
+
+    /**
      * @var string url to submit value. Can be string or array containing Yii route, e.g. `array('site/updateUser')`
      * @see x-editable
      */
@@ -519,8 +524,8 @@ class WhEditable extends CWidget
     {
         $cs = Yii::app()->getClientScript();
 
-
-        $path = __DIR__ . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'bootstrap-editable';
+        $bootstrapFolder = $this->bootstrap3 ? 'bootstrap3-editable' : 'bootstrap-editable';
+        $path = __DIR__ . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . $bootstrapFolder;
         $assetsUrl = $this->getAssetsUrl($path);
 
         //register assets
