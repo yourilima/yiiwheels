@@ -29,7 +29,7 @@ class WhEditable extends CWidget
     /**
      * @var boolean use bootstrap 3 version of x-editable
      */
-    public $bootstrap3 = false
+    public $bootstrap3 = false;
 
     /**
      * @var string url to submit value. Can be string or array containing Yii route, e.g. `array('site/updateUser')`
